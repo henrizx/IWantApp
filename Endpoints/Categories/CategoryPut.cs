@@ -10,7 +10,7 @@ public class CategoryPut
     public static string[] Methods => new string[] { HttpMethod.Put.ToString() };
     public static Delegate Handle => Action;
 
-    public static  IResult Action([FromRoute]Guid id,CategoryRequest categoryRequest, ApplicationDbContext context)
+    public static  IResult Action([FromRoute]Guid id, CategoryRequest categoryRequest, ApplicationDbContext context)
     {
         var category = context.Categories.Find(id);
         if (category == null)
